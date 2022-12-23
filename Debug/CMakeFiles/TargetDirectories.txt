@@ -1,3 +1,0 @@
-/Users/benjaminshih/Desktop/cppviz/Debug/CMakeFiles/test.dir
-/Users/benjaminshih/Desktop/cppviz/Debug/CMakeFiles/edit_cache.dir
-/Users/benjaminshih/Desktop/cppviz/Debug/CMakeFiles/rebuild_cache.dir

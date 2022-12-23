@@ -1,7 +1,0 @@
-[
-{
-  "directory": "/Users/benjaminshih/Desktop/cppviz/Debug",
-  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -isystem /opt/homebrew/include -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++17 -o CMakeFiles/test.dir/test.cpp.o -c /Users/benjaminshih/Desktop/cppviz/test.cpp",
-  "file": "/Users/benjaminshih/Desktop/cppviz/test.cpp"
-}
-]
