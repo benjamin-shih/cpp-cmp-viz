@@ -3,7 +3,7 @@
 ## Quick Start
 
 ```
-# Build the CMAKE project: 
+# Build the CMAKE project:
 ~/cppviz $ mkdir build
 ~/cppviz $ cd build
 ~/cppviz/build $ cmake ..
