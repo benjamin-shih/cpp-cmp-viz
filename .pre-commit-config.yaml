@@ -24,6 +24,8 @@ repos:
         language: system
         args:
           [
+            --std=c++11,
+            --language=c++,
             --enable=all,
             --suppress=unusedFunction,
             --suppress=unmatchedSuppression,
