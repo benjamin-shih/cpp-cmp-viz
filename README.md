@@ -1,4 +1,4 @@
-# C++ Simulation and Visualization
+# C++ Numerics and Visualization
 
 Mixing in standard Python numerics with C++ bindings and C++ visualizations for efficiency.
 
