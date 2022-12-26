@@ -14,7 +14,6 @@ set(Boost_USE_STATIC_LIBS OFF)
 set(Boost_USE_MULTITHREADED ON)
 set(Boost_USE_STATIC_RUNTIME OFF)
 
-
 find_package(Boost 1.80.0 COMPONENTS random)
 find_package(Matplot++ REQUIRED)
 find_package(Eigen3 3.3 REQUIRED)
