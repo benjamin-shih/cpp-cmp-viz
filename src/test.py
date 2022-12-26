@@ -2,6 +2,9 @@ import sys
 
 sys.path.append("../build/")
 import matplotlib.pyplot as plt
+import seaborn as sns
+
+sns.set_theme()
 from CPPViz import MyClass
 
 Simulation = MyClass(-4, 4, 1000)

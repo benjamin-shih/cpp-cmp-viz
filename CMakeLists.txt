@@ -5,14 +5,14 @@ project(
   VERSION 1.0
   LANGUAGES CXX)
 
+set(CMAKE_VERBOSE_MAKEFILE ON)
 set(CMAKE_CXX_STANDARD 20)
 set(PYBIND11_PYTHON_VERSION 3.6)
-set(CMAKE_CXX_FLAGS "-Wall -Wextra -fPIC")
+set(CMAKE_CXX_FLAGS "-Wall -Wextra")
 
 find_package(Matplot++ REQUIRED)
 find_package(Eigen3 3.3 REQUIRED)
 find_package(pybind11 REQUIRED)
-
 pybind11_add_module(${PROJECT_NAME} src/pywrap.cpp)
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE VERSION_INFO=${EXAMPLE_VERSION_INFO})

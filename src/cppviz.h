@@ -1,4 +1,3 @@
-// mylib.hpp
 #include <Eigen/Dense>
 #include <cmath>
 
