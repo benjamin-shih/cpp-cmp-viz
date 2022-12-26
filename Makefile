@@ -1,3 +1,6 @@
+cb:
+	rm -rf build
+
 clean:
 	rm -rf Debug build compile_commands.json
 
