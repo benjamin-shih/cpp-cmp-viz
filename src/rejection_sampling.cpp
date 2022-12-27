@@ -22,9 +22,6 @@ std::vector<std::pair<float, float>> unif_rect(int n, int a, int b, int c,
 std::vector<float> rejection_sample(std::function<float(float)> g,
                                     int sample_size, int a, int b, int c,
                                     int d) {
-  /*
-   * Rejection sampling algorithm
-   */
   std::vector<std::pair<float, float>> xy = unif_rect(sample_size, a, b, c, d);
 
   for (int i = 0; i < sample_size; ++i) {
