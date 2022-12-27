@@ -7,10 +7,11 @@ Mixing in standard Python numerics with C++ bindings and C++ visualizations for 
 - [Eigen3](https://eigen.tuxfamily.org/index.php?title=Main_Page)
 - [Matplot++](https://github.com/alandefreitas/matplotplusplus)
 - [Boost](https://www.boost.org)
+- [xtensor](https://github.com/xtensor-stack/xtensor)
 
 For system-wide accessibility on Mac, some of these packages can be downloaded with brew and included with CMAKE:
 ```
-brew install pybind11 matplot++ boost
+brew install pybind11 matplot++ boost xtensor
 ```
 
 ## Quick Start
