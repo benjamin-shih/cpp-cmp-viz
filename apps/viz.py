@@ -1,3 +1,12 @@
+"""
+Python runner for Python wrapped C++ implementation of rejection sampling.
+Uses C++ to run computation and return the result, then use seaborn to make
+nicer plots.
+
+To run: make build to build the project then run with python viz.py
+
+Last edited: 12.27.22
+"""
 import sys
 
 sys.path.append("../build/src/")

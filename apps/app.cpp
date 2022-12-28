@@ -1,6 +1,12 @@
 #include <cpp_viz/lib.hpp>
 #include <matplot/matplot.h>
-
+/**
+ * C++ only calling and running for rejection sampling class:
+ * computation and resulting visuals are all in C++. Runs much
+ * faster than viz.py by sacrifices visuals.
+ *
+ * Last edited: 12.27.22
+ */
 const int N = 100000;
 
 int main() {
