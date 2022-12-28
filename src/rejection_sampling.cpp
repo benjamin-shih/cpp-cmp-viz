@@ -1,11 +1,4 @@
-#include <algorithm>
-#include <boost/random.hpp>
-#include <cmath>
-#include <iterator>
-#include <matplot/matplot.h>
 #include <random>
-
-const int N = 100000;
 
 std::vector<std::pair<float, float>> unif_rect(int n, int a, int b, int c,
                                                int d) {
@@ -37,16 +30,4 @@ std::vector<float> rejection_sample(std::function<float(float)> g,
   std::transform(begin(xy), end(xy), std::back_inserter(x),
                  [](auto const &pair) { return pair.first; });
   return x;
-}
-
-int main() {
-  auto g = [](auto x) {
-    return ((x > -1 && x < 0) || (x > 1 / 2 && x < 1))
-               ? pow(sin(10 * x), 2) * abs(pow(x, 3) + 2 * x - 3)
-               : 0;
-  };
-  std::vector<float> res = rejection_sample(g, N, -1, 1, 0, 10);
-  auto h = matplot::hist(res);
-  matplot::show();
-  return 0;
 }
