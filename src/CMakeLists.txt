@@ -1,5 +1,5 @@
 set(HEADER_LIST "${CPPViz_SOURCE_DIR}/include/cpp_viz/lib.hpp")
 add_library(rej_samp rejection_sampling.cpp ${HEADER_LIST})
 target_include_directories(rej_samp PUBLIC ../include)
-target_link_libraries(rej_samp PRIVATE) # Matplot++::matplot Eigen3::Eigen ${Boost_LIBRARIES} xtensor)
+target_link_libraries(rej_samp PRIVATE Boost::boost) # Matplot++::matplot Eigen3::Eigen ${Boost_LIBRARIES} xtensor)
 target_compile_features(rej_samp PUBLIC cxx_std_11)
