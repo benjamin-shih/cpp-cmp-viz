@@ -9,7 +9,8 @@ int main() {
                ? pow(sin(10 * x), 2) * abs(pow(x, 3) + 2 * x - 3)
                : 0;
   };
-  std::vector<float> res = rejection_sample(g, N, -1, 1, 0, 10);
+  auto rej = RejectionSample();
+  std::vector<float> res = rej.rejection_sample(g, N, -1, 1, 0, 10);
   auto h = matplot::hist(res);
   matplot::show();
   return 0;

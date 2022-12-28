@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.1...3.25)
 
 project(
   CPPViz
-  VERSION 1.0
+  VERSION 1.1
   DESCRIPTION "C++ Numerics and Visualization"
   LANGUAGES CXX)
 
@@ -35,12 +35,10 @@ if((CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME OR MODERN_CMAKE_BUILD_TESTING)
 endif()
 
 #[[
-
 pybind11_add_module(${PROJECT_NAME} src/pywrap.cpp)
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE VERSION_INFO=${EXAMPLE_VERSION_INFO})
 target_include_directories(${PROJECT_NAME} PRIVATE ${PYBIND11_INCLUDE_DIRS})
-target_link_libraries(${PROJECT_NAME} PRIVATE Eigen3::Eigen)
 
 file(GLOB SOURCES src/mesh.cpp src/rejection_sampling.cpp src/tensor.cpp src/sum_integers.cpp)
 

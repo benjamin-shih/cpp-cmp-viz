@@ -9,7 +9,12 @@ cb:
 
 clean:
 	@echo "$(YELLOW)[INFO $(LOGFILE)] $(GREEN)Cleaning up..."
-	@rm -rf Debug build compile_commands.json
+	@echo "$(YELLOW)[INFO $(LOGFILE)] $(GREEN)Removing Debug..."
+	@rm -rf Debug
+	@echo "$(YELLOW)[INFO $(LOGFILE)] $(GREEN)Removing build..."
+	@rm -rf build
+	@echo "$(YELLOW)[INFO $(LOGFILE)] $(GREEN)Removing compile_commands.json...$(RESET)"
+	@rm compile_commands.json
 
 debug:
 	@echo "$(YELLOW)[INFO $(LOGFILE)] $(GREEN)Creating debug directory...$(RESET)"

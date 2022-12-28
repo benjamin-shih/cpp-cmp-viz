@@ -2,10 +2,11 @@
 #include <boost/accumulators/statistics/mean.hpp>
 #include <boost/accumulators/statistics/moment.hpp>
 #include <boost/accumulators/statistics/stats.hpp>
+#include <cpp_viz/lib.hpp>
 #include <random>
 
-std::vector<std::pair<float, float>> unif_rect(int n, int a, int b, int c,
-                                               int d) {
+std::vector<std::pair<float, float>>
+RejectionSample::unif_rect(int n, int a, int b, int c, int d) {
   std::random_device rd;
   std::mt19937 gen(rd());
   std::vector<std::pair<float, float>> values(n);
@@ -16,9 +17,9 @@ std::vector<std::pair<float, float>> unif_rect(int n, int a, int b, int c,
   return values;
 }
 
-std::vector<float> rejection_sample(std::function<float(float)> g,
-                                    int sample_size, int a, int b, int c,
-                                    int d) {
+std::vector<float>
+RejectionSample::rejection_sample(std::function<float(float)> g,
+                                  int sample_size, int a, int b, int c, int d) {
   std::vector<std::pair<float, float>> xy = unif_rect(sample_size, a, b, c, d);
 
   for (int i = 0; i < sample_size; ++i) {
@@ -33,6 +34,7 @@ std::vector<float> rejection_sample(std::function<float(float)> g,
   std::vector<float> x;
   std::transform(begin(xy), end(xy), std::back_inserter(x),
                  [](auto const &pair) { return pair.first; });
+  RejectionSample::res = x;
   return x;
 }
 

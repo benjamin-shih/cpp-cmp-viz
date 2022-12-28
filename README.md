@@ -1,6 +1,6 @@
 # C++ Numerics and Visualization
 
-Mixing in standard Python numerics with C++ bindings and C++ visualizations for efficiency.
+Testing mixing standard Python numerics with C++ bindings and C++ visualizations.
 
 ## Dependencies
 - [pybind11](https://pybind11.readthedocs.io/en/stable/)

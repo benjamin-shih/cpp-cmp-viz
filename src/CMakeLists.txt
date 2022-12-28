@@ -3,3 +3,8 @@ add_library(rej_samp rejection_sampling.cpp ${HEADER_LIST})
 target_include_directories(rej_samp PUBLIC ../include)
 target_link_libraries(rej_samp PRIVATE Boost::boost) # Matplot++::matplot Eigen3::Eigen ${Boost_LIBRARIES} xtensor)
 target_compile_features(rej_samp PUBLIC cxx_std_11)
+
+pybind11_add_module(${PROJECT_NAME} pywrap.cpp)
+target_compile_definitions(${PROJECT_NAME} PUBLIC VERSION_INFO=${VERSION_INFO})
+target_include_directories(${PROJECT_NAME} PUBLIC ${PYBIND11_INCLUDE_DIRS} ../include)
+target_link_libraries(${PROJECT_NAME} PRIVATE Boost::boost)
