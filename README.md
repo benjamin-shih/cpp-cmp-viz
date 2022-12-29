@@ -11,7 +11,7 @@ Testing mixing standard Python numerics with C++ bindings and C++ visualizations
 
 For system-wide accessibility on Mac, some of these packages can be downloaded with brew and included with CMAKE:
 ```
-brew install pybind11 matplot++ boost xtensor
+brew install pybind11 matplotplusplus boost xtensor
 ```
 
 ## Quick Start
