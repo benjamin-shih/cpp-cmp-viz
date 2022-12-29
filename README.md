@@ -1,5 +1,7 @@
 # C++ Numerics and Visualization
 
+![build](https://github.com/benjamin-shih/cpp-cmp-viz/actions/workflows/cmake.yml/badge.svg)
+
 Testing mixing standard Python numerics with C++ bindings and C++ visualizations.
 
 ## Dependencies
