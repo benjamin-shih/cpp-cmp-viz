@@ -1,3 +1,4 @@
+#include <Eigen/Dense>
 #include <tuple>
 #include <vector>
 
@@ -12,4 +13,11 @@ public:
                                       int sample_size, int a, int b, int c,
                                       int d);
 };
+
+class LinAlg {
+public:
+  LinAlg() {}
+  void qr_decomp(Eigen::MatrixXf A, Eigen::VectorXf b);
+};
+
 std::tuple<double, double> accumulate_vector(const std::vector<double> &values);

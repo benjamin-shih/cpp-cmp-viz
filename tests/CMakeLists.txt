@@ -6,5 +6,5 @@ FetchContent_MakeAvailable(catch)
 
 add_executable(testlib testrej.cpp)
 target_compile_features(testlib PRIVATE cxx_std_11)
-target_link_libraries(testlib PRIVATE rej_samp Catch2::Catch2)
+target_link_libraries(testlib PRIVATE algs Catch2::Catch2)
 add_test(NAME testlibtest COMMAND testlib)

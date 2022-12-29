@@ -22,7 +22,7 @@ include(FetchContent)
 
 find_package(Boost 1.80.0 COMPONENTS random)
 find_package(Matplot++ REQUIRED)
-find_package(Eigen3 3.3 REQUIRED)
+find_package(Eigen3 REQUIRED)
 find_package(pybind11 REQUIRED)
 find_package(xtensor REQUIRED)
 
@@ -33,20 +33,3 @@ if((CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME OR MODERN_CMAKE_BUILD_TESTING)
    AND BUILD_TESTING)
   add_subdirectory(tests)
 endif()
-
-#[[
-pybind11_add_module(${PROJECT_NAME} src/pywrap.cpp)
-
-target_compile_definitions(${PROJECT_NAME} PRIVATE VERSION_INFO=${EXAMPLE_VERSION_INFO})
-target_include_directories(${PROJECT_NAME} PRIVATE ${PYBIND11_INCLUDE_DIRS})
-
-file(GLOB SOURCES src/mesh.cpp src/rejection_sampling.cpp src/tensor.cpp src/sum_integers.cpp)
-
-foreach(srcfile ${SOURCES} )
-    get_filename_component(EXECUTABLE_NAME ${srcfile} NAME_WE)
-    include_directories(${Boost_INCLUDE_DIRS} ${xtensor_INCLUDE_DIRS})
-    add_executable( ${EXECUTABLE_NAME} ${srcfile} )
-    target_link_libraries(${EXECUTABLE_NAME} Matplot++::matplot Eigen3::Eigen ${Boost_LIBRARIES} xtensor)
-endforeach(srcfile ${SOURCES} )
-
-]]
