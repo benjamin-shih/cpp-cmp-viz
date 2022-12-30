@@ -1,6 +1,10 @@
 #include <Eigen/Dense>
+#include <mlpack.hpp>
 #include <tuple>
 #include <vector>
+
+void regress(arma::mat data, arma::vec responses, arma::mat points,
+             arma::rowvec predictions);
 
 class RejectionSample {
 public:
