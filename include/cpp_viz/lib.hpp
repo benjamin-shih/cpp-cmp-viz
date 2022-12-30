@@ -1,5 +1,5 @@
 #include <Eigen/Dense>
-#include <mlpack.hpp>
+#include <armadillo>
 #include <tuple>
 #include <vector>
 

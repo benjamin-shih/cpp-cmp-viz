@@ -34,11 +34,12 @@ int main() {
   std::vector<double> res = {0.0, 1.0};
   arma::mat data = {{0.0, 1.0}, {0.0, 1.0}};
   arma::rowvec resp(res);
-  arma::mat points = {3.0};
+  arma::mat points = {{2.0, 2.0}};
   arma::rowvec predictions;
 
   mlpack::LinearRegression lr(data, resp);
   lr.Parameters();
+  lr.Predict(points, predictions);
 
   // regress(data, resp, points, predictions);
 
