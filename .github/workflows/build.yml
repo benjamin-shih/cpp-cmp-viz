@@ -21,8 +21,8 @@ jobs:
         brew install pybind11 matplotplusplus boost xtensor eigen mlpack
         cmake --version
 
-    - name: Configure CMake
-      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+    # - name: Configure CMake
+    #   run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
     - name: Build
       run: mkdir build && cd build && cmake .. && make
