@@ -1,5 +1,5 @@
 #include <iostream>
-#include <mlpack.hpp>
+#include "mlpack/methods/linear_regression.hpp"
 
 void regress(arma::mat data, arma::vec responses, arma::mat points,
              arma::rowvec predictions) {
