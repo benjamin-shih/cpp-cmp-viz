@@ -38,4 +38,4 @@ if(mlpack_FOUND)
 endif()
 
 # Hide internal variables
-mark_as_advanced(MLPACK_INCLUDE_DIR)
+mark_as_advanced(MLPACK_INCLUDE_DIR MLPACK_LIBRARY)
