@@ -18,8 +18,29 @@ jobs:
 
     - name: Install dependencies
       run: |
-        brew install pybind11 matplotplusplus boost xtensor eigen mlpack
+        brew install pybind11 boost xtensor eigen mlpack dpkg
         cmake --version
+
+
+    - name: Cache matplotplusplus
+      uses: actions/cache@v3
+      id: cache-matplotplusplus
+      with:
+          path: "~/matplotplusplus"
+          key: ${{secrets.MATPLOTPLUSPLUS_VERSION}}
+
+    - name: Install matplotplusplus
+      env:
+        CACHE_HIT: ${{steps.cache-matplotplusplus.outputs.cache-hit}}
+        VALGRIND_VERSION: ${{secrets.MATPLOTPLUSPLUS_VERSION}}
+      run: |
+          if [[ "$CACHE_HIT" == 'true' ]]; then
+            sudo cp --verbose --force --recursive ~/matplotplusplus/* /
+          else
+            brew install matplotplusplus
+            mkdir -p ~/matplotplusplus
+            sudo dpkg -L matplotplusplus| while IFS= read -r f; do if test -f $f; then echo $f; fi; done | xargs cp --parents --target-directory ~/matplotplusplus/
+          fi
 
     # - name: Configure CMake
     #   run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
