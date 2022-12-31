@@ -21,7 +21,7 @@ endif()
 
 include(FetchContent)
 
-find_package(Armadillo REQUIRED)
+# find_package(Armadillo REQUIRED)
 find_package(Boost 1.80.0 COMPONENTS random)
 find_package(Matplot++ REQUIRED)
 find_package(Eigen3 REQUIRED)
