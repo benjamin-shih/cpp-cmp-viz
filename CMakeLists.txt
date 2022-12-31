@@ -27,6 +27,8 @@ find_package(Matplot++ REQUIRED)
 find_package(Eigen3 REQUIRED)
 find_package(pybind11 REQUIRED)
 find_package(mlpack REQUIRED)
+
+include_directories(${MLPACK_INCLUDE_DIRS})
 # find_package(xtensor REQUIRED)
 
 add_subdirectory(src)

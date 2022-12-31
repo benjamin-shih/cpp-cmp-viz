@@ -1,7 +1,8 @@
 set(HEADER_LIST "${CPPViz_SOURCE_DIR}/include/cpp_viz/lib.hpp")
 add_library(algs rejection_sampling.cpp lssolver.cpp regressions.cpp ${HEADER_LIST})
+include_directories(${MLPACK_INCLUDE_DIRS})
 target_include_directories(algs PUBLIC ${MLPACK_INCLUDE_DIRS} ../include)
-target_link_libraries(algs PUBLIC Boost::boost Eigen3::Eigen ${ARMADILLO_LIBRARIES} ${MLPACK_LIBRARIES}) # Matplot++::matplot Eigen3::Eigen ${Boost_LIBRARIES} xtensor)
+target_link_libraries(algs PUBLIC Boost::boost Eigen3::Eigen ${ARMADILLO_LIBRARIES} ${MLPACK_LIBRARY}) # Matplot++::matplot Eigen3::Eigen ${Boost_LIBRARIES} xtensor)
 target_compile_features(algs PUBLIC cxx_std_11)
 
 pybind11_add_module(${PROJECT_NAME} pywrap.cpp)
