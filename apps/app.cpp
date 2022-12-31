@@ -2,7 +2,6 @@
 #include <cpp_viz/lib.hpp>
 #include <functional>
 #include <matplot/matplot.h>
-#include <mlpack.hpp>
 /**
  * C++ only calling and running for rejection sampling class:
  * computation and resulting visuals are all in C++. Runs much
@@ -30,18 +29,6 @@ int main() {
 
   Eigen::MatrixXf A = Eigen::MatrixXf::Random(3, 2);
   Eigen::VectorXf B = Eigen::VectorXf::Random(3);
-
-  std::vector<double> res = {0.0, 1.0};
-  arma::mat data = {{0.0, 1.0}, {0.0, 1.0}};
-  arma::rowvec resp(res);
-  arma::mat points = {{2.0, 2.0}};
-  arma::rowvec predictions;
-
-  mlpack::LinearRegression lr(data, resp);
-  lr.Parameters();
-  lr.Predict(points, predictions);
-
-  // regress(data, resp, points, predictions);
 
   LinAlg la;
   la.qr_decomp(A, B);

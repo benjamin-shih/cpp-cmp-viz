@@ -1,10 +1,9 @@
 #include <Eigen/Dense>
-#include <armadillo>
 #include <tuple>
 #include <vector>
 
-void regress(arma::mat data, arma::vec responses, arma::mat points,
-             arma::rowvec predictions);
+// void regress(arma::mat data, arma::vec responses, arma::mat points,
+//             arma::rowvec predictions);
 
 class RejectionSample {
 public:

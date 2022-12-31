@@ -18,7 +18,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        brew install pybind11 matplotplusplus boost xtensor eigen mlpack
+        brew install pybind11 matplotplusplus boost eigen
         cmake --version
 
     - name: Configure CMake

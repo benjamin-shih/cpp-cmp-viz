@@ -26,7 +26,7 @@ find_package(Boost 1.80.0 COMPONENTS random)
 find_package(Matplot++ REQUIRED)
 find_package(Eigen3 REQUIRED)
 find_package(pybind11 REQUIRED)
-find_package(mlpack REQUIRED)
+# find_package(mlpack REQUIRED)
 # find_package(xtensor REQUIRED)
 
 add_subdirectory(src)
