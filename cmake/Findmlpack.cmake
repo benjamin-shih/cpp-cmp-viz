@@ -24,7 +24,7 @@
 include(FindPackageHandleStandardArgs)
 # UNIX paths are standard, no need to specify them.
 find_path(MLPACK_INCLUDE_DIR
-    NAMES mlpack/core.hpp mlpack/prereqs.hpp
+    NAMES mlpack/../mlpack.hpp # mlpack/core.hpp mlpack/prereqs.hpp mlpack/../mlpack.hpp
     PATHS "$ENV{ProgramFiles}/mlpack"
 )
 
@@ -42,7 +42,6 @@ endif()
 
 #[[
 mlpack lib in mlpack/version/lib?
-
 find_library(MLPACK_LIBRARY
   NAMES mlpack
   PATHS "$ENV{ProgramFiles}/mlpack/${MLPACK_VERSION_STRING}/lib"  "$ENV{ProgramFiles}/mlpack/${MLPACK_VERSION_STRING}/lib64" "$ENV{ProgramFiles}/mlpack"
@@ -50,7 +49,7 @@ find_library(MLPACK_LIBRARY
 ]]
 
 find_package_handle_standard_args(mlpack
-  REQUIRED_VARS MLPACK_INCLUDE_DIR MLPACK_VERSION_STRING #MLPACK_LIBRARY
+  REQUIRED_VARS MLPACK_INCLUDE_DIR MLPACK_VERSION_STRING # MLPACK_LIBRARY
 )
 
 if(mlpack_FOUND)
@@ -59,4 +58,4 @@ if(mlpack_FOUND)
 endif()
 
 # Hide internal variables
-mark_as_advanced(MLPACK_INCLUDE_DIR) # MLPACK_LIBRARY)
+mark_as_advanced(MLPACK_INCLUDE_DIR) #MLPACK_LIBRARY)
