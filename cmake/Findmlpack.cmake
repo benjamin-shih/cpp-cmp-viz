@@ -42,11 +42,11 @@ endif()
 
 #[[
 mlpack lib in mlpack/version/lib?
+]]
 find_library(MLPACK_LIBRARY
   NAMES mlpack
   PATHS "$ENV{ProgramFiles}/mlpack/${MLPACK_VERSION_STRING}/lib"  "$ENV{ProgramFiles}/mlpack/${MLPACK_VERSION_STRING}/lib64" "$ENV{ProgramFiles}/mlpack"
 )
-]]
 
 find_package_handle_standard_args(mlpack
   REQUIRED_VARS MLPACK_INCLUDE_DIR MLPACK_VERSION_STRING # MLPACK_LIBRARY
