@@ -1,4 +1,4 @@
-set(HEADER_LIST "${CPPViz_SOURCE_DIR}/include/cpp_viz/lib.hpp")
+set(HEADER_LIST "${CPPViz_SOURCE_DIR}/include/cpp_viz/lib.hpp;${CPPViz_SOURCE_DIR}/include/cpp_viz/tempreg.hpp")
 add_library(algs rejection_sampling.cpp lssolver.cpp ${HEADER_LIST})
 target_include_directories(algs PUBLIC ../include)
 target_link_libraries(algs PUBLIC Boost::boost Eigen3::Eigen)

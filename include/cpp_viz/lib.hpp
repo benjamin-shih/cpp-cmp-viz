@@ -1,23 +1,12 @@
+#pragma once
+#ifndef LIB_H
+#define LIB_H
+
 #include <Eigen/Dense>
 #include <Eigen/SVD>
 #include <iostream>
 #include <tuple>
 #include <vector>
-
-template <typename Derived>
-void print_size(const Eigen::EigenBase<Derived> &b) {
-  std::cout << "size (rows, cols): " << b.size() << " (" << b.rows() << ", "
-            << b.cols() << ")" << std::endl;
-}
-
-template <typename M, typename V>
-Eigen::MatrixXf regress(const Eigen::MatrixBase<M> &X,
-                        const Eigen::MatrixBase<V> &points) {
-  // Solve OLS with SVD
-  Eigen::JacobiSVD<Eigen::MatrixXf> svd;
-  svd.compute(X, Eigen::ComputeThinV | Eigen::ComputeThinU);
-  return svd.solve(points);
-}
 
 class RejectionSample {
 public:
@@ -38,3 +27,5 @@ public:
 };
 
 std::tuple<double, double> accumulate_vector(const std::vector<double> &values);
+
+#endif // LIB_H
